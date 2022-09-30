@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Random Card Generator</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -12,17 +12,78 @@
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
-  <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+  <body class="bg-success h-100">
+    <div class="container-fluid h-100">
+      <div class="form-row align-items-center d-flex justify-content-center">
+        <div class="col-2 mx-3">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Ancho</div>
+            </div>
+            <input
+              type="number"
+              class="form-control"
+              id="cardWidth"
+              min="5"
+              onKeyDown="return false"
+            />
+          </div>
+        </div>
+        <div class="col-2 mx-3">
+          <div class="input-group mb-2">
+            <button
+              id="toggleCountdown"
+              value="Activar temporizador"
+              type="button"
+              class="btn btn-dark"
+            >
+              Activar temporizador
+            </button>
+          </div>
+        </div>
+        <div class="col-2 mx-3">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Alto</div>
+            </div>
+            <input
+              type="number"
+              class="form-control"
+              id="cardHeight"
+              min="18"
+              onKeyDown="return false"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid d-flex justify-content-center">
+        <div class="card m-auto" style="width: 18rem; height: 24rem;">
+          <div class="card-body">
+            <div id="cardSuitTop" class="card-text h-25">
+              <h1 class="display-1 fw-bold"></h1>
+            </div>
+            <div
+              id="cardNumber"
+              class="card-text row align-items-center text-center h-50"
+            >
+              <h1 class="display-1 fw-bold"></h1>
+            </div>
+            <div
+              id="cardSuitBottom"
+              class="card-text h-25 d-flex justify-content-end"
+            >
+              <h1 class="display-1 fw-bold"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container w-100 d-flex justify-content-center mt-3 d-none">
+        <div id="countdown"></div>
+      </div>
+      <div class="container w-100 d-flex justify-content-center mt-3">
+        <button id="changeCard" type="button" class="btn btn-dark">
+          Cambiar carta
+        </button>
       </div>
     </div>
   </body>
